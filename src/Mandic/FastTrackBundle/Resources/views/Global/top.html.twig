@@ -1,4 +1,4 @@
-Olá {{ token.getUsername() }} - <a href={{@logout}} >Sair</a>
+Olá {{ app.security.getToken().getUser().getUsername() }} - <a href={{ path('logout') }} >Sair</a>
 
 
 
