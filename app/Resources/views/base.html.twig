@@ -3,13 +3,28 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}fasttrack mandic{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+          {% stylesheets
+              '@MandicFastTrackBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+              '@MandicFastTrackBundle/Resources/public/bootstrap/css/bootstrap-responsive.min.css'
+            filter='cssrewrite'
+          %}
+              <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+          {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}
           {% include "MandicFastTrackBundle:Global:top.html.twig" %}
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+          {% javascripts 
+              '@MandicFastTrackBundle/Resources/public/bootstrap/js/bootstrap.min.js' 
+              '@MandicFastTrackBundle/Resources/public/jquery/jquery-1.8.2.min.js'
+          %}
+              <script src="{{ asset_url }}" type="text/javascript"></script>
+          {% endjavascripts %}
+      {% endblock %}
     </body>
 </html>
