@@ -1,3 +1,22 @@
+home:
+  pattern: /
+  defaults: { _controller: MandicFastTrackBundle:Home:index }
+
+login:
+  pattern: /login
+  defaults: { _controller: MandicFastTrackBundle:Login:index }
+
+login_check:
+  pattern: /login_check
+
+logout:
+  pattern: /logout
+
+admin:
+  pattern: /admin
+  defaults: { _controller: MandicFastTrackBundle:Admin:index }
+
+
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
