@@ -2,14 +2,23 @@
 
 {% block body %}
   {{ parent () }}
-  {% if error %}
-  <div>{{ error.message }}</div>
-  {% endif %}
-
-  <form action="{{ path('login_check') }}" method="post">
-      <label for="username">Usuario:</label>
-      <input id="username" type="text" name="_username" value="{{ last_username }}" />
-      <label for="password">Contraseña:</label>
-      <input id="password" type="password" name="_password" /> <input type="submit" name="login" />
+  <form action="{{ path('login_check') }}" method="post" class="form-horizontal">
+   <legend>Complete form to login</legend>
+    <div class="control-group">
+      <div class="controls">
+        <input id="username" type="text" name="_username" value="{{ last_username }}" placeholder="User" />
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <input id="password" type="password" name="_password" placeholder="Password" />
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">Sign in</button>
+      </div>
+    </div>
   </form>
+  {% if error %} <div class="alert alert-error" >{{ error.message }}</div> {% endif %}
 {% endblock %}
