@@ -6,6 +6,10 @@ login:
   pattern: /login
   defaults: { _controller: MandicFastTrackBundle:Login:index }
 
+user_preferences:
+  pattern: /prefs
+  defaults: { _controller: MandicFastTrackBundle:User:preferences }
+
 login_check:
   pattern: /login_check
 

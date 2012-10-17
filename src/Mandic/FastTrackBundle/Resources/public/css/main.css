@@ -1,0 +1,23 @@
+body{
+  padding-top: 70px;
+}
+
+
+/* ######## LOGIN */
+
+.login .controls{
+  margin-left: 0;
+}
+
+.login .controls button{
+  float: right; 
+}
+
+.login .control-group{
+  width: 220px;
+
+}
+
+.login .alert{
+  width: 170px;
+}
